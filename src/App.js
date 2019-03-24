@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
+import SignUp from './components/auth/SignUp';
+import SignIn from './components/auth/SignIn'
+import AddExpense from './components/expenses/AddExpense';
+import Dashboard from './components/dashboard/Dashboard';
+import EditExpense from './components/expenses/EditExpense';
+//import Header from './components/layout/Header';
+import Navbar from './components/layout/Navbar'
+import NotFoundPage from './components/expenses/NotFoundpage';
+import SummaryExpense from './components/expenses/SummaryExpense';
 class App extends Component {
-  render() {
+    
+    
+    
+    render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+ 
+    <BrowserRouter>
+    
+    <Navbar />
+        <Switch>
+        <Route path="/" component={Dashboard} exact={true}  />
+            <Route path="/signin" component={SignUp} />             
+            <Route path="/signup" component={SignIn} /> 
+            <Route path="/create" component={AddExpense}  />
+            <Route path="/summary" component={SummaryExpense}/>
+            <Route path="/edit/:id" component={EditExpense}  />
+            {/* <Route path="/help" component={Help}  /> */}
+            <Route component={NotFoundPage} />
+        </Switch>
+
+
+    </BrowserRouter>
+
+   );
   }
 }
 
