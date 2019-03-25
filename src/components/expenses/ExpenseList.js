@@ -5,7 +5,7 @@ import { getExpense } from '../../store/actions/expensesActions'
 import{firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import Spinner from '../layout/Spinner';
-
+import filteredExpense from '../filter/filterLogic';
 const ExpenseList = (props) => {
    // console.log('expenseList props:', props.expenses.length[1]);
     //console.log('props.expenses.description',props.fbExpenses.description);
@@ -26,18 +26,17 @@ const ExpenseList = (props) => {
             })}    */}
             <h1>All  {props.expense.length} expenses </h1>
        <h1> All Expenses: Your total is :</h1> 
-     
        {props.expense&&props.expense.map((eachExpense) => {
            return <ExpenseListItem key={eachExpense.id} expense={eachExpense}/>})}  
             </div> 
        
     ); 
-// }else{return <Spinner/> }
-}
-//where expenses coming from is reducer name and then initstate name expenses 
+// // }else{return <Spinner/> }
+ }
+// //where expenses coming from is reducer name and then initstate name expenses 
 
 const mapState = state => ({
-    expense: state.expense
+    expense: filteredExpense(state.expense, state.filters)
     })
    const mapDispatch = dispatch => {
     dispatch(getExpense())
@@ -46,8 +45,6 @@ const mapState = state => ({
     }
    }
    export default connect(mapState, mapDispatch)(ExpenseList);
-
-
 
 // const mapStateToProps=(state)=>{
 //     console.log('state.expense:', state.TestExpenses );
@@ -59,8 +56,8 @@ const mapState = state => ({
 //       expenses:state.firestore.ordered.expenses,
 //       //filters: state.filters
 //      };
-//  };
-// //export default connect(mapStateToProps)(Dashboard)
+ //};
+//export default connect(mapStateToProps)(Dashboard)
 // export default compose(
 //    connect(mapStateToProps),
 //    firestoreConnect([
