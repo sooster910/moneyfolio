@@ -18,20 +18,10 @@ const filtersReducer = (state = initState, action) => {
                 text: action.text
             };
         case 'SET_CATEGORY_FILTER':
-
             return {
                 ...state,
                 category: action.category
             }
-        case 'SET_UNCATEGORY_FILTER':
-            // const filteredItem= state.category.filter((selectedcategory)=>
-            // selectedcategory!=='select')
-            // return{ ...state, category:filteredItem, text : [...state.text]}
-            if (state.category === 'select')
-                return {
-                    ...state
-                }
-
         case 'SORT_BY_AMOUNT':
             return {
                 ...state,

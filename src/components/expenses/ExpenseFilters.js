@@ -14,7 +14,6 @@ class ExpenseFilters extends Component {
     }
 
     handleDateChange = ({ startDate, endDate }) => {
-       // console.log('you change the date');
         this.props.dispatch(setStartDate(startDate));
         this.props.dispatch(setEndDate(endDate));
     }

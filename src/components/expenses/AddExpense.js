@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import 'react-dates/initialize';
 import { connect } from 'react-redux'
-import { addExpense, getExpense } from '../../store/actions/expensesActions'
+import { addExpense} from '../../store/actions/expensesActions'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
-// import { SingleDatePicker } from 'react-dates';
-// import 'react-dates/lib/css/_datepicker.css';
+
 
 class AddExpense extends Component {
 
@@ -65,7 +64,6 @@ class AddExpense extends Component {
         } else {
             this.setState(() => ({ Message: '' }));
             this.props.addExpense(this.state);
-            //this.props.getExpense();
             this.props.history.push('/');
         }
 
@@ -116,15 +114,6 @@ class AddExpense extends Component {
                         onSelect={this.handleCreatedAt} //when day is clicked
                         onChange={this.handleChange} //only when value has changed
                     />
-
-                    {/* <SingleDatePicker
-            date={this.state.createdAt}
-            onDateChange={this.handleCreatedAt}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.handleFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          /> */}
 
                     <textarea placeholder="Add a optional note for your expense"
                         value={this.state.note}
