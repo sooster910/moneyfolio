@@ -1,49 +1,61 @@
-const initState={
-    text :'',
+import moment from 'moment'
+
+const initState = {
+    text: '',
     sortBy: 'date',
-    category:'null',
-    startDate :undefined,
-    endDate: undefined
+    category: '',
+    startDate: moment().startOf('month'),
+    endDate: moment().endOf('month')
 }
 
 const filtersReducer = (state = initState, action) => {
     console.log(' state from filterReducer:', state);
-   
-    switch(action.type){
+
+    switch (action.type) {
         case 'SET_TEXT_FILTER':
-           return{
-               ...state,
-               text:action.text
-           };
+            return {
+                ...state,
+                text: action.text
+            };
         case 'SET_CATEGORY_FILTER':
-           return{
-               ...state,
-               text:action.category
-           }
+
+            return {
+                ...state,
+                category: action.category
+            }
+        case 'SET_UNCATEGORY_FILTER':
+            // const filteredItem= state.category.filter((selectedcategory)=>
+            // selectedcategory!=='select')
+            // return{ ...state, category:filteredItem, text : [...state.text]}
+            if (state.category === 'select')
+                return {
+                    ...state
+                }
+
         case 'SORT_BY_AMOUNT':
-           return{
-               ...state,
-               sortBy: 'amount'
-           }
-       
-       case 'SORT_BY_DATE':
-           return{
-               ...state,
-               sortBy:'date'
-           }
-       case 'SET_START_DATE':
-       return{
-           ...state,
-           startDate: action.startDate
-       }
-       case 'SET_END_DATE':
-       return{
-           ...state,
-           endDate:action.endDate
-       }
-           default:
-             return state;
-           }
+            return {
+                ...state,
+                sortBy: 'amount'
+            }
+
+        case 'SORT_BY_DATE':
+            return {
+                ...state,
+                sortBy: 'date'
+            }
+        case 'SET_START_DATE':
+            return {
+                ...state,
+                startDate: action.startDate
+            }
+        case 'SET_END_DATE':
+            return {
+                ...state,
+                endDate: action.endDate
+            }
+        default:
+            return state;
+    }
 
 }
 
