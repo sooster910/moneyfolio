@@ -3,7 +3,7 @@
 export const addExpense=(expense)=>{
   console.log('from action ')
   return(dispatch,getState,{getFirebase,getFirestore})=>{
-  //make async call to db
+    //make async call to db
     const firestore = getFirestore();
    
     firestore.collection('expenses').add({
@@ -20,32 +20,57 @@ export const addExpense=(expense)=>{
   }
 }
 
+// export const getExpense = () => {
+//   return (dispatch, getState, { getFirestore }) => {
+//  const firestore = getFirestore()
+//  const expense=[]; 
+//  firestore.collection('expenses').get().then(function(querySnapshot) {
+   
+//     querySnapshot.forEach(function(doc) {
+//         // doc.data() is never undefined for query doc snapshots
+//     expense.push({
+//       id: doc.id,
+//       ...doc.data()
+//     })
+//       });
+//     console.log('GET_EXPENSE:', expense)
+    
+//   //  dispatch({type:'GET_EXPENSE',expense})
+//   dispatch({type:'GET_EXPENSE',expense})
+// })
+
+// }};
+
+
+
 export const getExpense = () => {
   return (dispatch, getState, { getFirestore }) => {
  const firestore = getFirestore()
-   firestore.collection('expenses').get().then(function(querySnapshot) {
-    const expense=[];
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-    expense.push({
-      id: doc.id,
-      ...doc.data()
-    })
-      
-       // const data=doc.data()
-       // console.log(doc.id, " => ",doc.data() );
-        //dispatch({type:'getExpenseReducer', doc})
-    });
-    console.log('GET_EXPENSE:', expense)
-    
+ 
+ return firestore.collection('expenses').get().then(collection=>{
+  const expense=[]  
+   collection.docs.map((doc)=>expense.push({...doc.data(), id:doc.id}))
+    console.log('new get expense:',expense)
     dispatch({type:'GET_EXPENSE',expense})
-  })
-}};
+  
+ })
 
-export const getExpenseReducer=(expenses)=>({
-  type:'SET_EXPENSES',
-  expenses
-})
+}
+
+};
+
+
+
+
+
+
+
+
+
+// export const getExpenseReducer=(expenses)=>({
+//   type:'SET_EXPENSE',
+//   expenses
+// })
 // export const addExpenseReducer =(expense)=>({
 //   type:'ADD_EXPENSE',
 //   expense

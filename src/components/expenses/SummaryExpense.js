@@ -1,27 +1,21 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import { addExpense,getExpense } from '../../store/actions/expensesActions'
-
 
 
 
 
 const SummaryExpense=(props)=>{
-   
+
+    const total = props.expenses.map((expenses)=>{
+        return expenses.amount}).reduce((sum,value)=>{
+            return sum + parseFloat(value.toString())
+        },0)
+    
    return(<div>
-       <h1>All  {props.expense.length} expenses </h1>
-       <h1> All Expenses: Your total is :</h1> 
-       {props.expense.map(eachExpense => <li key={eachExpense.id}> {eachExpense.description} {eachExpense.amount}</li>)}  
-
-
+       <h1>Summary Expense</h1>
+       <h1> All Expenses:{props.expenses.length}</h1> 
+       <h1>Your total spending : ${parseFloat(total).toFixed(2)} </h1>  
+  
     </div>)
 }
-  const mapState = state => ({
-    expense: state.expense
-    })
-   const mapDispatch = dispatch => {
-    dispatch(getExpense())
-    return {
-    }
-   }
-   export default connect(mapState, mapDispatch)(SummaryExpense);
+
+  export default SummaryExpense;
