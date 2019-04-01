@@ -9,39 +9,20 @@ import { dispatch } from 'rxjs/internal/observable/range';
 import ExpenseChart from '../expenses/ExpenseChart';
 
 class Dashboard extends Component {
-    // componentWillMount(){
-    //     // this.props.dispatch(getExpense())
-    //    
-    //     console.log('start getExpense()')
-    // }
-    
-    render(){
-        console.log('this.props.expense:', this.props.expensee)
-       
-    return(
-        <div>      
-            <ExpenseFilters/>
-            <SummaryExpense expenses={this.props.expense}/>
-           <ExpenseChart expenses={this.props.expense}/>
-            <ExpenseList expenses={this.props.expense}/>
-        </div>
+
+  render() {
+    console.log('this.props.expense:', this.props.expensee)
+
+    return (
+      <div>
+        <ExpenseFilters />
+        <SummaryExpense />
+        <ExpenseChart />
+        <ExpenseList />
+
+      </div>
     )
-}
+  }
 }
 
-const mapState = state => ({
-    
-     expense: filteredExpense(state.expense, state.filters)
-  
-  });
-  const mapDispatch = dispatch => {
-    dispatch(getExpense())
-    return{
-    };
-  };
-  export default connect(
-    mapState,
-    mapDispatch
-  )(Dashboard);
-
-//export default Dashboard;
+export default Dashboard;

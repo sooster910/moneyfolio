@@ -5,18 +5,17 @@ import { connect } from "react-redux";
 import { getExpense } from "../../store/actions/expensesActions";
 import Spinner from "../layout/Spinner";
 import filteredExpense from "../filter/filterLogic";
+
+
 class ExpenseList extends Component {
 
-  
   render() {
     
-    if (this.props.expenses) {
+    if (this.props.expense) {
       return (
         <div>
-{/* 
-          <SummaryExpense expense={this.props.expenses}/> */}
-            {this.props.expenses &&
-            this.props.expenses.map(eachExpense => {
+            {this.props.expense &&
+            this.props.expense.map(eachExpense => {
               return (
                 <ExpenseListItem key={eachExpense.id} expense={eachExpense} />
               );
@@ -29,15 +28,8 @@ class ExpenseList extends Component {
   }
 }
 
-// const mapState = state => ({
-//   expense: filteredExpense(state.expense, state.filters)
-// });
-// const mapDispatch = dispatch => {
-//   dispatch(getExpense());
-//   return {};
-// };
-// export default connect(
-  // mapState,
-//   mapDispatch
- //)(ExpenseList);
-export default ExpenseList;
+const mapState = state => ({
+  expense: filteredExpense(state.expense, state.filters)
+});
+
+export default connect(mapState)(ExpenseList);
