@@ -1,40 +1,38 @@
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Login } from '../../store/actions/authActions';
+import { Redirect } from 'react-router-dom'
+import firebase, { googleAuthProvider } from "../../config/fbConfig";
+
 
 class SignIn extends Component {
-  state = {
-    email: '',
-    password: ''
-  }
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
+ 
+ 
+  handleClick = () => {
+    firebase.auth().signInWithPopup(googleAuthProvider).then(() => {
+      this.props.history.push('/dashboard');
     })
-  }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
+
   }
   render() {
+    const { auth } = this.props
+    if (auth.uid) return <Redirect to="/dashboard" />
+
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <h5>Sign In</h5>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" id='email' onChange={this.handleChange} />
-          </div>
-          <div >
-            <label htmlFor="password">Password</label>
-            <input type="password" id='password' onChange={this.handleChange} />
-          </div>
-          <div >
-            <button >Login</button>
-          </div>
-        </form>
+
+        <button onClick={this.handleClick} >Google Login </button>
       </div>
     )
   }
 }
 
-export default SignIn
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(SignIn)
+//export default SignIn
