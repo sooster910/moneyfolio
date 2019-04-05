@@ -5,7 +5,8 @@ export const addExpense=(expense)=>{
   return(dispatch,getState,{getFirebase,getFirestore})=>{
     //make async call to db
     const firestore = getFirestore();
-    firestore.collection('expenses').add({
+    const uid= getState().auth.uid
+    firestore.collection("users").doc(`${uid}`).collection("expenses").add({
      ...expense
     })
     .then(()=>{
@@ -21,8 +22,8 @@ export const addExpense=(expense)=>{
 export const getExpense = () => {
   return (dispatch, getState, { getFirestore }) => {
  const firestore = getFirestore()
- 
- return firestore.collection('expenses').get().then(collection=>{
+ const uid = getState().auth.uid;
+ return firestore.collection('users').doc(`${uid}`).collection('expenses').get().then(collection=>{
  console.log("collection",collection)
   const expense=[]  
    collection.docs.map((doc)=>expense.push({...doc.data(), id:doc.id}))
@@ -38,16 +39,21 @@ expense
 })
 
   // REMOVE_EXPENSE
-  export const removeExpense = ( {id}  = {}) => ({
-    type: 'REMOVE_EXPENSE',
-    id
-  });
-  
+  export const removeExpense = ( {id} = {}) => {
+   return(dispatch,getState,{getFirestore}) =>{
+     const firestore = getFirestore()
+      const uid = getState().auth.uid;
+   firestore.collection('users').doc(`${uid}`).collection('expenses').doc(id).delete()
+      dispatch({type:'REMOVE_EXPENSE', id})
+      
+  };
+}
   // EDIT_EXPENSE
   export const editExpense = (id, updates) => {
    return (dispatch, getState,{getFirestore})=>{
       const firestore=getFirestore()
-      firestore.collection('expenses').doc(id).update({
+      const uid = getState().auth.uid;      
+      firestore.collection('users').doc(`${uid}`).collection('expenses').doc(id).update({
         ...updates
       }).then(()=>dispatch({type:'EDIT_EXPENSE',id,updates})
       )
