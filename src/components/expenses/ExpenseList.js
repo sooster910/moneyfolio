@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import ExpenseListItem from "./ExpenseListItem";
-import SummaryExpense from "./SummaryExpense";
 import { connect } from "react-redux";
-import { getExpense } from "../../store/actions/expensesActions";
 import Spinner from "../layout/Spinner";
 import filteredExpense from "../filter/filterLogic";
+
 
 
 class ExpenseList extends Component {
@@ -13,17 +12,26 @@ class ExpenseList extends Component {
     
     if (this.props.expense) {
       return (
-        <div>
-            {this.props.expense &&
-            this.props.expense.map(eachExpense => {
-              return (
-                <ExpenseListItem key={eachExpense.id} expense={eachExpense} />
-              );
-            })}
-        </div>
+        <table className="table">
+          <thead className="thead-inverse">
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th />
+            </tr>
+          </thead>
+          {this.props.expense && this.props.expense.map(eachExpense => {
+            return (
+              <ExpenseListItem key={eachExpense.id} expense={eachExpense} />
+         
+            );
+          })}
+        </table>
       );
     } else {
-      return <Spinner />;
+      return <Spinner />
     }
   }
 }
