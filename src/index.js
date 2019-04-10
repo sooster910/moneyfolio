@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App,{history} from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -14,6 +14,8 @@ import fbConfig from './config/fbConfig'
 import { getExpense } from './store/actions/expensesActions';
 import firebase from './config/fbConfig'
 import { Login, Logout } from './store/actions/authActions';
+
+
 
 const composeEnhencers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer,
@@ -36,20 +38,24 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    store.dispatch(Login(user.uid));
+    console.log('before dispatch login')
+     store.dispatch(Login(user.uid));    
     console.log('log in uid:', user.uid)
 
     store.dispatch(getExpense()).then(() => {
+      console.log('after getExpense')
       renderApp()
-
-
+     if (history.location.pathname === '/')
+      history.push('/dashboard');
     })
   } else {
     // store.dispatch(Logout());
     renderApp()
+    history.push('/');
     console.log('log out')
   }
 })
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
