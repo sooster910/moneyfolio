@@ -1,28 +1,37 @@
-import React, { Component } from 'react';
-import ExpenseList from '../expenses/ExpenseList';
-import SummaryExpense from '../expenses/SummaryExpense';
-import ExpenseFilters from '../expenses/ExpenseFilters';
+import React, { Component } from "react";
+import ExpenseList from "../expenses/ExpenseList";
+import SummaryExpense from "../expenses/SummaryExpense";
+import ExpenseFilters from "../expenses/ExpenseFilters";
 import { connect } from "react-redux";
-import { getExpense } from "../../store/actions/expensesActions";
-import filteredExpense from "../filter/filterLogic";
-import { dispatch } from 'rxjs/internal/observable/range';
-import ExpenseChart from '../expenses/ExpenseChart';
+import ExpenseChart from "../expenses/ExpenseChart";
+import { Redirect } from "react-router-dom";
 
 class Dashboard extends Component {
-
   render() {
-    console.log('this.props.expense:', this.props.expensee)
-
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/" />;
     return (
-      <div>
-        <ExpenseFilters />
-        <SummaryExpense />
-        <ExpenseChart />
-        <ExpenseList />
-
-      </div>
-    )
+      <section id="main">
+        <div className="container pt-3">
+          <ExpenseFilters />
+          <div className="row justify-content-md-center mb-4">
+            <div className="col lg-6 md-6 sm-12">
+              <SummaryExpense />
+            </div>
+            <div className="col lg-6 md-6 sm-12">
+              <ExpenseChart />
+            </div>
+          </div>
+          <ExpenseList />
+        </div>
+      </section>
+    );
   }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+export default connect(mapStateToProps)(Dashboard);
