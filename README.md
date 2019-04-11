@@ -19,10 +19,10 @@
 <li>edit spending</li>
 <li>remove spending</li>
 <li>multiple search by text, category and date-range.</li>
-<li>google sign-in</li>
+<li>count percentage of spending at each category with pie chart</li>
 <li>overall total spending</li> 
 <li>montly spending</li>
-<li>count percentage of spending at each category with pie chart</li>
+<li>google sign-in</li>
 <ul>
 
 This project is inspired by Udemy The Complete React Web Developer Course (with Redux)
