@@ -12,8 +12,8 @@
 <li>Firestore</li>
 <li>Bootstrap 4</li>
 </ul>
-## Features
 
+## Features
 <ul>
 <li>add spending</li>
 <li>edit spending</li>
@@ -23,7 +23,7 @@
 <li>overall total spending</li> 
 <li>montly spending</li>
 <li>google sign-in</li>
-<ul>
+</ul>
 
 This project is inspired by Udemy The Complete React Web Developer Course (with Redux)
 
