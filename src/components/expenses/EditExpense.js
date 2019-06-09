@@ -50,16 +50,17 @@ class EditExpense extends Component {
         );
     }
 }
-const mapStateToProps = (state, props) => {
-    return {
-        auth: state.auth,
-        matchingExpense: state.expense.find((eachExpense) => {
-            console.log('mapstate:', eachExpense.id)
-            console.log('mapstate:', eachExpense)
-            return eachExpense.id === props.match.params.id
-        })
-    }
-}
+const mapStateToProps = (state, props) => ({
+
+        
+        matchingExpense: state.expense.find((eachExpense) => 
+            // console.log('mapstate:', eachExpense.id)
+            // console.log('mapstate:', eachExpense)
+            eachExpense.id === props.match.params.id
+        ),
+        auth: state.auth
+    })
+
 const mapDispatchToProps = (dispatch, props) => ({
     editExpense: (id, expense) => dispatch(editExpense(id, expense)),
     removeExpense: (expense) => dispatch(removeExpense(expense))

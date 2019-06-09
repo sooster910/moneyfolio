@@ -8,10 +8,6 @@ const expenseReducer = (state = initState, action) => {
     case 'SET_EXPENSE':
       return action.expense
 
-    case 'GET_EXPENSE':
-      console.log('GETEXPENSE STATE:', state);
-      return action.expense;
-
     case 'REMOVE_EXPENSE':
       //   return state.filter(({id})=>{
       //         return id !== action.id

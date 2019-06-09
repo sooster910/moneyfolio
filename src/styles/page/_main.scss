@@ -1,0 +1,12 @@
+@import "../base/variable";
+
+$primary-color: #5c34ae;
+
+/* Dashboard*/
+
+#main {
+  color: $primary-color;
+  display: relative;
+  height: 100vh;
+  width: 100%;
+}

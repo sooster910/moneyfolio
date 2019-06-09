@@ -3,6 +3,7 @@ import moment from 'moment';
 
 //filter logic 
 
+
 const filteredExpense = (expenses, { text, sortBy, startDate, endDate, category, amount }) => {
 
   return expenses.filter((filteringExpense) => {
@@ -18,7 +19,6 @@ const filteredExpense = (expenses, { text, sortBy, startDate, endDate, category,
   })
 }
 
-
-export default filteredExpense;
+ export default filteredExpense;
 
 

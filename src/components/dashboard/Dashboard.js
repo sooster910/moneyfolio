@@ -5,25 +5,22 @@ import ExpenseFilters from "../expenses/ExpenseFilters";
 import { connect } from "react-redux";
 import ExpenseChart from "../expenses/ExpenseChart";
 import { Redirect } from "react-router-dom";
-
+import Footer from "../layout/Footer";
 class Dashboard extends Component {
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/" />;
     return (
       <section id="main">
-        <div className="container pt-3">
-          <ExpenseFilters />
-          <div className="row justify-content-md-center mb-4">
-            <div className="col lg-6 md-6 sm-12">
-              <SummaryExpense />
-            </div>
-            <div className="col lg-6 md-6 sm-12">
-              <ExpenseChart />
-            </div>
-          </div>
-          <ExpenseList />
-        </div>
+        <ExpenseFilters />
+
+        <SummaryExpense />
+
+        {/* <ExpenseChart /> */}
+
+        <ExpenseList />
+
+        <Footer />
       </section>
     );
   }

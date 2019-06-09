@@ -1,0 +1,71 @@
+/* navbar*/
+
+.navbar {
+  position: relative;
+  background-color: $primary-color;
+  color: #fff;
+  height: 70px;
+  padding-top: 15px;
+}
+.navbar-brand {
+  font-weight: 800;
+  font-size: 2rem;
+  //   color: #331d60;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+
+  display: inline-block;
+}
+.icon {
+  margin-right: 3px;
+}
+.navbar-list {
+  float: right;
+  display: block;
+
+  &-item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &::before {
+      @include navbar-gradient;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      transform-origin: center;
+      transform: scaleY(0);
+      -webkit-transform: scaleY(0);
+      -moz-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+      -o-transform: scaleY(0);
+      transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+      -webkit-transition: transform 0.2s,
+        width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+      -moz-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+      -ms-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+      -o-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+    }
+    &:hover::before {
+      width: 100%;
+      transform: scaleY(1);
+      -webkit-transform: scaleY(1);
+      -moz-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+      -o-transform: scaleY(1);
+    }
+  }
+}
+
+.nav-link:link,
+.nav-link:visited {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  z-index: 10;
+}

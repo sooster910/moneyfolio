@@ -1,0 +1,20 @@
+@include mediaXL {
+}
+//desktops & laptops
+@include mediaLg {
+}
+
+//tablets & small laptop
+@include mediaMd {
+  .search_container_group {
+    flex-direction: column;
+  }
+  .search_container_group-item {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+//mobile
+@include mediaSm {
+}

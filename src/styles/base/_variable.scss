@@ -1,0 +1,27 @@
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap");
+
+$primary-color: #5c34ae;
+$bg-color: #f2edf3;
+$primary-text-color: #969292;
+
+@mixin easeOut {
+  transition: all 0.7s ease-out;
+}
+@mixin pink-gradient {
+  background: linear-gradient(to right, #ffbf96, #fe7096);
+}
+
+@mixin blue-gradient {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+}
+
+@mixin green-gradient {
+  background: linear-gradient(to right, #b7f8db, #50a7c2);
+}
+
+@mixin navbar-gradient {
+  background: linear-gradient(to right, #ff00cc, #333399);
+}
+// $font-poppins: "Poppins", Arial, Tahoma, sans-serif;
+// $font-IBM: "IBM Plex Mono", monospace;
