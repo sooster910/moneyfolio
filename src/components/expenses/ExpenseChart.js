@@ -222,66 +222,32 @@ const ExpenseChart = props => {
   };
 
   return (
-    <div className="chart">
-      {/* <div className="card chart-card">
-      <div className="card-body">
-        <Bar
-          data={dataByCategory}
-          options={{
-            maintainAspectRatio: false,
-            responsive: true,
-            title: {
-              display: true,
-              text: 'Spending Percentage by Category',
-
-            },
-            tooltips: {
-         callbacks: {
-        label: function(tooltipItem, data) {
-          return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][0]['data'][tooltipItem['index']] + '%';
-        }
-      }
-    }
-          }}
-          width={400}
-          height={300}
-
-
-        />
-
-      </div>
-
-    </div> */}
-
-      <div className="card chart-card mt-3">
-        <div className="card-body">
-          <Pie
-            data={dataByCategory}
-            options={{
-              maintainAspectRatio: false,
-              responsive: true,
-              title: {
-                display: true,
-                text: "Spending Percentage by Category"
-              },
-              tooltips: {
-                callbacks: {
-                  label: function(tooltipItem, data) {
-                    return (
-                      data["labels"][tooltipItem["index"]] +
-                      ": " +
-                      data["datasets"][0]["data"][tooltipItem["index"]] +
-                      "%"
-                    );
-                  }
-                }
+    <div className="chart-card-item">
+      <Pie
+        data={dataByCategory}
+        options={{
+          maintainAspectRatio: true,
+          responsive: true,
+          title: {
+            display: true,
+            text: "Spending Percentage by Category"
+          },
+          tooltips: {
+            callbacks: {
+              label: function(tooltipItem, data) {
+                return (
+                  data["labels"][tooltipItem["index"]] +
+                  ": " +
+                  data["datasets"][0]["data"][tooltipItem["index"]] +
+                  "%"
+                );
               }
-            }}
-            width={400}
-            height={400}
-          />
-        </div>
-      </div>
+            }
+          }
+        }}
+        width={400}
+        height={400}
+      />
     </div>
   );
 };

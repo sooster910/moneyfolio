@@ -10,9 +10,11 @@ body {
   left: 0;
   // line-height: 1.5;
   overflow-x: hidden;
-  font-family: "Hind Vadodara", sans-serif;
+  font-family: $font-poppins;
+  // font-family: "Hind Vadodara", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 *,
@@ -25,6 +27,19 @@ body {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0;
+  @media only screen and (max-width: $bp-largest) {
+    max-width: 960px;
+  }
+  @media only screen and (max-width: $bp-large) {
+    // max-width: 890px;
+    margin: 0 20px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0 20px;
+  }
+  //  @media only screen and (max-width: $bp-small) {
+
+  // }
 }
 
 .section {

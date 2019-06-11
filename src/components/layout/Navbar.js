@@ -11,7 +11,7 @@ const Navbar = props => {
   const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 
   return (
-    <div className="navbar clearfix">
+    <div className="navbar">
       <nav className="row">
         <Link to="/dashboard" className="navbar-brand">
           <span>
@@ -19,7 +19,6 @@ const Navbar = props => {
           </span>
           Moneyfolio
         </Link>
-
         <ul className="navbar-list">{links}</ul>
       </nav>
     </div>

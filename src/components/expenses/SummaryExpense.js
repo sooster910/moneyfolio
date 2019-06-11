@@ -60,37 +60,46 @@ const SummaryExpense = props => {
     }, 0);
   console.log("total lastmonth", lastMonthTotal);
   return (
-    <div className="summary">
-      <div className="summary-card-container">
-        <div className="card-item ">
-          <h5>
-            <i className="fas fa-search" /> You are viewing
-          </h5>
-          <h1> {props.expense.length} expenses</h1>
-        </div>
-        <div className="card-item ">
-          <h5>
-            <i className="fas fa-coins" /> Overall Spent{" "}
-          </h5>
-          <h1>${parseFloat(total).toFixed(2)}</h1>
-        </div>
+    <div className="row">
+      <div className="summary">
+        <div className="summary-card-container">
+          <div className="card-item ">
+            <h4>
+              <i className="fas fa-search" /> You are viewing
+            </h4>
+            <h1> {props.expense.length} expenses</h1>
+          </div>
 
-        <div className="card-item">
-          <h5>
-            <i className="fas fa-coins" /> Total of This Month
-          </h5>
-          <h1> ${parseFloat(monthTotal).toFixed(2)}</h1>
-        </div>
+          <div className="card-item">
+            <div className="card-item-icon">
+              <i className="fas fa-coins fa-2x" />
+            </div>
+            <div className="card-item-title">
+              <h4>Overall Spent </h4>
+            </div>
+            <div className="card-item-desc">
+              <h1>${parseFloat(total).toFixed(2)}</h1>
+            </div>
+          </div>
 
-        <div className="card-item">
-          <h5>
-            <i className="fas fa-coins" /> Total of last Month
-          </h5>
-          <h1> ${parseFloat(lastMonthTotal).toFixed(2)}</h1>
+          <div className="card-item">
+            <h4>
+              <i className="fas fa-coins" />
+              This Month
+            </h4>
+            <h1> ${parseFloat(monthTotal).toFixed(2)}</h1>
+          </div>
+
+          <div className="card-item">
+            <h4>
+              <i className="fas fa-coins" /> Last Month
+            </h4>
+            <h1> ${parseFloat(lastMonthTotal).toFixed(2)}</h1>
+          </div>
         </div>
-      </div>
-      <div className="summary-chart-container">
-        <ExpenseChart />
+        <div className="summary-chart-container">
+          <ExpenseChart />
+        </div>
       </div>
     </div>
   );

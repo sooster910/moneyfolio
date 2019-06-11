@@ -1,8 +1,11 @@
-@import "./page/dashboard.scss";
 @import "./base/base";
 @import "./base/variable";
 @import "./base/utilities";
 @import "./page/main";
+@import "./page/dashboard";
 @import "./components/nav";
+@import "./components/table";
+@import "./components/card";
 @import "./landing";
+
 @import "./mobile";
