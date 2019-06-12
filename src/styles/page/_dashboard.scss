@@ -1,3 +1,7 @@
+@import "../base/variable";
+
+/* Dashboard*/
+
 /*-----------------------------*/
 /*SEARCH BAR*/
 /*-----------------------------*/
@@ -67,20 +71,6 @@
 .textarea {
   @extend .text-input;
   height: 10rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #fff;
-  font-weight: 300;
-}
-h5 {
-  color: #7d7aae;
-  margin: 0 0 5px 0;
-}
-h4 {
-  margin: 0 0 5px 0;
 }
 
 /*-----------------------------*/

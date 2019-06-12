@@ -4,8 +4,6 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedoutLinks";
 import { connect } from "react-redux";
 
-import logo from "../../styles/pics/moneyfolio_small.png";
-
 const Navbar = props => {
   const { auth } = props;
   const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;

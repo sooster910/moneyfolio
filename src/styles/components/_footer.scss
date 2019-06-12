@@ -1,0 +1,32 @@
+footer {
+  padding: 40px 0;
+
+  background: #fdb99b;
+  margin: 0;
+  color: $primary-text-color;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-contents-item {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  //   text-align: center;
+  &-title {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  li {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+.list {
+}

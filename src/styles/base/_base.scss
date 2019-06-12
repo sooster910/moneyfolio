@@ -8,6 +8,7 @@ body {
   margin: 0;
   top: 0;
   left: 0;
+
   // line-height: 1.5;
   overflow-x: hidden;
   font-family: $font-poppins;
@@ -21,6 +22,17 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+section {
+  padding: 80px 0px;
+}
+
+.container {
+  color: $primary-color;
+  display: relative;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .row {
@@ -42,16 +54,16 @@ body {
   // }
 }
 
-.section {
-  padding: 80px 0;
-  opacity: 0;
-}
-
 .icon {
   margin-right: 3px;
 }
-li {
+ul {
+  margin: 0;
   list-style: none;
+  padding: 0;
+}
+
+li {
   display: inline-block;
   // margin-left: 40px;
 }

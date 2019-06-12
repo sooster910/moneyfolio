@@ -1,11 +1,12 @@
 @import "./base/base";
 @import "./base/variable";
+@import "./base/typogrphy";
 @import "./base/utilities";
-@import "./page/main";
 @import "./page/dashboard";
 @import "./components/nav";
 @import "./components/table";
 @import "./components/card";
-@import "./landing";
+@import "./components/footer";
+@import "./page/landing";
 
 @import "./mobile";

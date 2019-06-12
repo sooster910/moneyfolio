@@ -2,19 +2,19 @@
 
 .navbar {
   position: relative;
-  background-color: $primary-color;
-  color: #fff;
   height: 70px;
-  padding-top: 15px;
+  background-color: #fdb99b; /* fallback for old browsers */
 }
+
 .navbar-brand {
-  font-weight: 800;
+  padding: 10px;
+  font-weight: 300;
   font-size: 2rem;
   //   color: #331d60;
-  color: #fff;
+  // color: #fff;
+
   text-decoration: none;
   float: left;
-
   display: inline-block;
 }
 .icon {
@@ -26,6 +26,7 @@
 
   &-item {
     position: relative;
+    padding: 10px 20px;
     &:not(:last-child) {
       margin-right: 10px;
     }
@@ -37,18 +38,26 @@
       left: 0;
       width: 3px;
       height: 100%;
+      border-radius: 20px;
       transform-origin: center;
+
       transform: scaleY(0);
       -webkit-transform: scaleY(0);
       -moz-transform: scaleY(0);
       -ms-transform: scaleY(0);
       -o-transform: scaleY(0);
+
       transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
       -webkit-transition: transform 0.2s,
         width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
       -moz-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
       -ms-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
       -o-transition: transform 0.2s, width 0.1s cubic-bezier(1, 0, 0, 1) 0.2s;
+
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
     }
     &:hover::before {
       width: 100%;
@@ -64,7 +73,7 @@
 .nav-link:link,
 .nav-link:visited {
   position: relative;
-  color: white;
+  // color: white;
   text-decoration: none;
   list-style: none;
   z-index: 10;
