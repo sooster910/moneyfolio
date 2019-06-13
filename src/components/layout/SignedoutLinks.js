@@ -5,7 +5,7 @@ const SignedOutLinks = () => {
   return (
     <li className="navbar-list-item">
       <NavLink to="/" className="nav-link link">
-        Login
+        Sign In
       </NavLink>
     </li>
   );

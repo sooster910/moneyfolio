@@ -1,7 +1,7 @@
 .expense-header {
   display: flex;
   justify-content: space-between;
-  padding: 0 110px;
+  padding: 0 162px;
 
   .link-back {
     @extend.nav-link:link;
@@ -31,9 +31,9 @@
   @include box-shadow;
   background: -webkit-linear-gradient(to bottom, #fdb99b, #a770ef);
   background: linear-gradient(to bottom, #fdb99b, #a770ef);
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
-  padding: 6rem;
+  padding: 3rem 8rem;
   border-radius: 20px;
   @media only screen and (max-width: $bp-medium) {
     padding: 4rem 2rem;

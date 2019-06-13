@@ -7,7 +7,13 @@ footer {
 .footer-contents {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: row wrap;
+
+  @media only screen and (max-width: $bp-medium) {
+    text-align: center;
+    flex-flow: column wrap;
+    padding: 0;
+  }
 }
 
 .footer-contents-item {

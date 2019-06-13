@@ -70,31 +70,17 @@ const Footer = props => {
           <ul className="list social-list">
             <li className="socail-list-item">
               <Link to="#" className="nav-link">
-                facebook
+                <ion-icon name="logo-facebook" size="large" />
               </Link>
             </li>
             <li className="socail-list-item">
               <Link to="#" className="nav-link">
-                {" "}
-                Instargram
+                <ion-icon name="logo-instagram" size="large" />
               </Link>
             </li>
             <li className="socail-list-item">
               <Link to="#" className="nav-link">
-                {" "}
-                twitter
-              </Link>
-            </li>
-            <li className="componay-list-item">
-              <Link to="#" className="nav-link">
-                {" "}
-                google play{" "}
-              </Link>
-            </li>
-            <li className="componay-list-item">
-              <Link to="#" className="nav-link">
-                {" "}
-                ios{" "}
+                <ion-icon name="logo-twitter" size="large" />
               </Link>
             </li>
           </ul>

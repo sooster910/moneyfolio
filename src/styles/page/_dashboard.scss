@@ -23,7 +23,8 @@
   // background-color: #f0ebf0;
   border: 0px;
   z-index: 1;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -90,14 +91,10 @@
 
 .summary {
   position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  flex-direction: row;
   display: flex;
-  padding: 20px 10px;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px 0px;
   @media only screen and (max-width: $bp-small) {
     flex-direction: column;
   }
@@ -107,7 +104,6 @@
   flex: 1 1 40%;
   display: flex;
   justify-content: flex-start;
-
   flex-flow: row wrap;
 }
 
@@ -119,9 +115,8 @@
   position: relative;
   flex: 1 0 40%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  margin-right: 20px;
   padding: 20px;
-  margin-top: 10px;
+  margin: 10px 20px 0 0;
 
   &:nth-child(1) {
     @include pink-gradient;
@@ -209,7 +204,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: #fff;
+  background: #fff;
   padding: 10px;
 
   border-radius: 20px;

@@ -1,26 +1,14 @@
 /* navbar*/
 
 .navbar {
-  position: relative;
   height: 6rem;
   background-color: #fdb99b; /* fallback for old browsers */
+  padding: 0 4rem;
+  @media only screen and (max-width: $bp-small) {
+    padding: 0 1rem;
+  }
 }
-nav {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  text-align: center;
-  height: 100%;
-}
-.navbar-brand {
-  display: flex;
-  position: relative;
-  align-items: center;
-  padding: 10px;
-  font-weight: 300;
-  font-size: 2rem;
-  text-decoration: none;
-}
+
 .icon {
   margin-right: 3px;
 }
@@ -28,15 +16,29 @@ nav {
 @mixin z-index($value) {
   z-index: $value;
 }
+
 .navbar-list {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 70%;
+  z-index: 10;
+  float: right;
+  position: absolute;
+  right: 0px;
+  width: 260px;
+  height: 100%;
+  padding-top: 6rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.8s ease-out;
+  -webkit-transition: 0.8s ease-out;
+  -moz-transition: 0.8s ease-out;
+  -ms-transition: 0.8s ease-out;
+  -o-transition: 0.8s ease-out;
+
   &-item {
     position: relative;
     padding: 10px 20px;
+    display: flex;
+    margin-bottom: 1rem;
     &:not(:last-child) {
       margin-right: 10px;
     }
@@ -91,5 +93,52 @@ nav {
   position: relative;
   text-decoration: none;
   list-style: none;
-  z-index: 10;
+  z-index: 1;
+}
+
+.navbar-brand {
+  height: 6rem;
+  position: relative;
+  float: left;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 2rem;
+  text-decoration: none;
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+.navbar-list-item > .nav-link {
+  flex: 1;
+}
+.toggle-collapse {
+  right: 4rem;
+  height: 6rem;
+  display: inline-flex;
+  z-index: 100;
+  float: right;
+  position: fixed;
+  color: $secondary-text-color;
+  border: none;
+  background: none;
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    right: 1rem;
+  }
 }
