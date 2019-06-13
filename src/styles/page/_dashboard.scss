@@ -59,7 +59,6 @@
 
 .text-input {
   background-color: rgba(255, 255, 255, 0.2);
-  //   border: 1px solid grey;
   border: none;
   height: 50px;
   padding: 2px;
@@ -98,7 +97,6 @@
   margin-left: auto;
   flex-direction: row;
   display: flex;
-
   padding: 20px 10px;
   @media only screen and (max-width: $bp-small) {
     flex-direction: column;
@@ -124,14 +122,6 @@
   margin-right: 20px;
   padding: 20px;
   margin-top: 10px;
-
-  @media only screen and (max-width: $bp-small) {
-    &:last-child {
-      margin-bottom: 20px;
-    }
-    align-content: center;
-    margin-right: 0px;
-  }
 
   &:nth-child(1) {
     @include pink-gradient;
@@ -193,6 +183,7 @@
       color: #7d7aae;
     }
   }
+
   @media only screen and (max-width: $bp-large) {
     overflow-wrap: break-word;
     flex-basis: 80%;
@@ -200,7 +191,11 @@
     height: 150px;
   }
   @media only screen and (max-width: $bp-small) {
-    // flex-basis: 33.3333%;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    align-content: center;
+    margin-right: 0px;
   }
 }
 
@@ -214,7 +209,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  // background: #fff;
   padding: 10px;
 
   border-radius: 20px;
@@ -222,11 +217,4 @@
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-
-  @media only screen and (max-width: $bp-medium) {
-    // margin-right: 10px;
-  }
-  @media only screen and (max-width: $bp-medium) {
-    background-color: none;
-  }
 }

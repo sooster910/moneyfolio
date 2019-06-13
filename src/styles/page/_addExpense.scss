@@ -21,6 +21,10 @@
       #ff416c
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+  @media only screen and (max-width: $bp-small) {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 .expense-body {
@@ -33,6 +37,10 @@
   border-radius: 20px;
   @media only screen and (max-width: $bp-medium) {
     padding: 4rem 2rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 1rem;
+    width: 100%;
   }
 }
 
