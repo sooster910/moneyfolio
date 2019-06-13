@@ -9,10 +9,10 @@ body {
   top: 0;
   left: 0;
 
-  // line-height: 1.5;
+  color: $secondary-text-color;
   overflow-x: hidden;
   font-family: $font-poppins;
-  // font-family: "Hind Vadodara", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -26,6 +26,9 @@ body {
 
 section {
   padding: 80px 0px;
+  @media only screen and (max-width: $bp-small) {
+    padding: 40px 0px;
+  }
 }
 
 .container {
@@ -66,4 +69,8 @@ ul {
 li {
   display: inline-block;
   // margin-left: 40px;
+}
+
+.select {
+  color: rgba(0, 0, 0, 0.4);
 }

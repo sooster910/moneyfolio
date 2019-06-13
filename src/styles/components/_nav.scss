@@ -2,28 +2,38 @@
 
 .navbar {
   position: relative;
-  height: 70px;
+  height: 6rem;
   background-color: #fdb99b; /* fallback for old browsers */
 }
-
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+  height: 100%;
+}
 .navbar-brand {
+  display: flex;
+  position: relative;
+  align-items: center;
   padding: 10px;
   font-weight: 300;
   font-size: 2rem;
-  //   color: #331d60;
-  // color: #fff;
-
   text-decoration: none;
-  float: left;
-  display: inline-block;
 }
 .icon {
   margin-right: 3px;
 }
-.navbar-list {
-  float: right;
-  display: block;
 
+@mixin z-index($value) {
+  z-index: $value;
+}
+.navbar-list {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
   &-item {
     position: relative;
     padding: 10px 20px;
@@ -32,13 +42,16 @@
     }
     &::before {
       @include navbar-gradient;
+      @include z-index(1);
       content: "";
       position: absolute;
+
       top: 0;
       left: 0;
       width: 3px;
       height: 100%;
       border-radius: 20px;
+
       transform-origin: center;
 
       transform: scaleY(0);
@@ -70,10 +83,12 @@
   }
 }
 
+.link:active {
+  color: $secondary-text-color;
+}
 .nav-link:link,
 .nav-link:visited {
   position: relative;
-  // color: white;
   text-decoration: none;
   list-style: none;
   z-index: 10;

@@ -1,0 +1,62 @@
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 110px;
+
+  .link-back {
+    @extend.nav-link:link;
+  }
+  .remove-btn {
+    @include btn;
+
+    background: #ff416c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #ff4b2b,
+      #ff416c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #ff4b2b,
+      #ff416c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}
+
+.expense-body {
+  @include box-shadow;
+  background: -webkit-linear-gradient(to bottom, #fdb99b, #a770ef);
+  background: linear-gradient(to bottom, #fdb99b, #a770ef);
+  width: 80%;
+  margin: 0 auto;
+  padding: 6rem;
+  border-radius: 20px;
+  @media only screen and (max-width: $bp-medium) {
+    padding: 4rem 2rem;
+  }
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  > * {
+    margin-bottom: 1rem;
+  }
+  .add-btn {
+    @include btn;
+    &::before {
+      z-index: -1;
+    }
+    @extend.navbar-list-item;
+    @extend.nav-link:link;
+
+    border: none;
+    position: relative;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

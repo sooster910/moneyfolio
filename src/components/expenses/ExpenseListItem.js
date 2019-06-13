@@ -10,10 +10,7 @@ const ExpenseListItem = props => (
       <td>{props.expense.description}</td>
       <td>${parseFloat(props.expense.amount).toFixed(2)}</td>
       <td>
-        <Link
-          to={`/edit/${props.expense.id}`}
-          className="btn btn-dark action-button"
-        >
+        <Link to={`/edit/${props.expense.id}`} className="edit-btn">
           Edit/Remove
         </Link>
       </td>

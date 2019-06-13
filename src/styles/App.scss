@@ -4,9 +4,9 @@
 @import "./base/utilities";
 @import "./page/dashboard";
 @import "./components/nav";
-@import "./components/table";
-@import "./components/card";
-@import "./components/footer";
 @import "./page/landing";
+@import "./components/table";
+@import "./components/card-slide";
+@import "./components/footer";
 
-@import "./mobile";
+@import "./page/addExpense";

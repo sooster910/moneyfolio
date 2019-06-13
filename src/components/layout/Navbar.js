@@ -11,7 +11,7 @@ const Navbar = props => {
   return (
     <div className="navbar">
       <nav className="row">
-        <Link to="/dashboard" className="navbar-brand">
+        <Link to="/dashboard" className="navbar-brand link">
           <span>
             <i className="fas fa-wallet icon icon_logo" />
           </span>

@@ -1,7 +1,5 @@
 @import "../base/variable";
 
-/* Dashboard*/
-
 /*-----------------------------*/
 /*SEARCH BAR*/
 /*-----------------------------*/
@@ -38,7 +36,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
     @media only screen and (max-width: $bp-medium) {
       flex-direction: column;
     }
@@ -46,14 +44,19 @@
 }
 .search_container_group-item {
   margin-right: 1rem;
-  // background: rgb(247, 238, 238);
-  //   flex-basis: 100%;
 
   @media only screen and (max-width: $bp-medium) {
     margin-bottom: 10px;
     width: 100%;
   }
+
+  .text-input {
+    @media only screen and (max-width: $bp-medium) {
+      width: 316px;
+    }
+  }
 }
+
 .text-input {
   background-color: rgba(255, 255, 255, 0.2);
   //   border: 1px solid grey;
@@ -71,6 +74,15 @@
 .textarea {
   @extend .text-input;
   height: 10rem;
+}
+
+.DateRangePickerInput__showClearDates {
+  min-width: 60%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 /*-----------------------------*/
@@ -94,16 +106,11 @@
 }
 
 .summary-card-container {
-  // background-color: rgba(1, 1, 1, 0.7);
   flex: 1 1 40%;
   display: flex;
-
   justify-content: flex-start;
-  // align-items: center;
-  // justify-content: stretch;
-  flex-flow: row wrap;
 
-  // margin-right: 40px;
+  flex-flow: row wrap;
 }
 
 .card-item {
@@ -111,17 +118,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  // margin-right: 20px;
   position: relative;
-  // flex-shrink: 1;
-  // flex-basis: 260px;
   flex: 1 0 40%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
   padding: 20px;
+  margin-top: 10px;
 
-  margin-top: 20px;
+  @media only screen and (max-width: $bp-small) {
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    align-content: center;
+    margin-right: 0px;
+  }
 
   &:nth-child(1) {
     @include pink-gradient;
@@ -186,7 +196,7 @@
   @media only screen and (max-width: $bp-large) {
     overflow-wrap: break-word;
     flex-basis: 80%;
-    margin-right: 30px;
+
     height: 150px;
   }
   @media only screen and (max-width: $bp-small) {
@@ -206,17 +216,17 @@
   align-items: center;
   background: #fff;
   padding: 10px;
-  // flex-basis: 100%;
-  // flex: 1 0 40%;
+
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+
   @media only screen and (max-width: $bp-medium) {
-    margin-right: 10px;
+    // margin-right: 10px;
   }
-}
-.chart-card-item {
-  // flex: 1 1 auto;
+  @media only screen and (max-width: $bp-medium) {
+    background-color: none;
+  }
 }

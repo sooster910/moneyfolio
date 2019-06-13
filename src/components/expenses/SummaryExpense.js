@@ -71,15 +71,12 @@ const SummaryExpense = props => {
           </div>
 
           <div className="card-item">
-            <div className="card-item-icon">
+            <h4>
               <i className="fas fa-coins fa-2x" />
-            </div>
-            <div className="card-item-title">
-              <h4>Overall Spent </h4>
-            </div>
-            <div className="card-item-desc">
-              <h1>${parseFloat(total).toFixed(2)}</h1>
-            </div>
+              Overall Spent
+            </h4>
+
+            <h1>${parseFloat(total).toFixed(2)}</h1>
           </div>
 
           <div className="card-item">

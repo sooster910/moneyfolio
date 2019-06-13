@@ -91,86 +91,68 @@ class ExpenseForm extends Component {
   };
   render() {
     return (
-      <div>
-        {this.state.Message && <p>{this.state.Message}</p>}
+      <form onSubmit={this.onSubmit} className="expense-form">
+        {this.state.Message && (
+          <p class="expense-form-error">{this.state.Message}</p>
+        )}
 
-        <form onSubmit={this.onSubmit} className="expense-form">
-          <div className="form-row justify-content-md-center">
-            <div className=" form-group col col-lg-2 col-sm-6">
-              <SingleDatePicker
-                className="form-control"
-                date={this.state.createdAt}
-                onDateChange={this.onDateChange}
-                focused={this.state.calendarFocused}
-                onFocusChange={this.onFocusChange}
-                numberOfMonths={1}
-                isOutsideRange={() => false}
-              />
-            </div>
-            <div className=" form-group col col-lg-4 col-sm-6">
-              <select
-                value={this.state.category}
-                onChange={this.handleCategory}
-                className="select"
-              >
-                <option value="select">select category</option>
-                <option value="education">Education and Training</option>
-                <option value="food">Food</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="electronic">Electronic</option>
-                <option value="clothing">Clothing</option>
-                <option value="home">Home</option>
-                <option value="travel">Travel</option>
-                <option value="utilities">Utilities</option>
-                <option value="transportation">Transportation</option>
-                <option value="savings">Savings</option>
-                <option value="debt">Debt</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
+        <SingleDatePicker
+          className="form-control"
+          date={this.state.createdAt}
+          onDateChange={this.onDateChange}
+          focused={this.state.calendarFocused}
+          onFocusChange={this.onFocusChange}
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
 
-          <div className="form-row justify-content-md-center">
-            <div className="form-group col-6 ">
-              <input
-                type="text"
-                className="text-input"
-                placeholder="Description"
-                autoFocus
-                value={this.state.description}
-                onChange={this.handleDescription}
-              />
-            </div>
-          </div>
-          <div className="form-row justify-content-md-center">
-            <div className="form-group col-6 ">
-              <input
-                type="number"
-                className="text-input"
-                placeholder="Amount"
-                value={this.state.amount}
-                onChange={this.handleAmount}
-              />
-            </div>
-          </div>
+        <select
+          value={this.state.category}
+          onChange={this.handleCategory}
+          className="select"
+        >
+          <option value="select">select category</option>
+          <option value="education">Education and Training</option>
+          <option value="food">Food</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="electronic">Electronic</option>
+          <option value="clothing">Clothing</option>
+          <option value="home">Home</option>
+          <option value="travel">Travel</option>
+          <option value="utilities">Utilities</option>
+          <option value="transportation">Transportation</option>
+          <option value="savings">Savings</option>
+          <option value="debt">Debt</option>
+          <option value="other">Other</option>
+        </select>
 
-          <div className="form-row justify-content-md-center">
-            <div className="form-group col-6">
-              <textarea
-                placeholder="Add a optional note for your expense"
-                className="textarea"
-                value={this.state.note}
-                onChange={this.handleTextarea}
-              />
-            </div>
-          </div>
-          <div className="form-row justify-content-md-center">
-            <div className="form-group col-3">
-              <button className="form-control action-button">Add</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        <input
+          type="text"
+          className="text-input"
+          placeholder="Description"
+          autoFocus
+          value={this.state.description}
+          onChange={this.handleDescription}
+        />
+
+        <input
+          type="number"
+          className="text-input"
+          placeholder="Amount"
+          value={this.state.amount}
+          onChange={this.handleAmount}
+        />
+
+        <textarea
+          placeholder="Add a optional note for your expense"
+          className="textarea"
+          value={this.state.note}
+          onChange={this.handleTextarea}
+        />
+        <div>
+          <button className="add-btn">Add</button>
+        </div>
+      </form>
     );
   }
 }

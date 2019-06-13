@@ -16,15 +16,19 @@ class SignIn extends Component {
 
   nextProperty = () => {
     const newIndex = this.state.property.index + 1;
-    if (this.state.property.index < 1) {
-      this.setState({
-        property: data.properties[newIndex]
-      });
-    } else {
-      this.setState({
-        property: data.properties[0]
-      });
-    }
+    this.setState({
+      property: data.properties[newIndex]
+    });
+
+    // if (this.state.property.index < 3) {
+    //   this.setState({
+    //     property: data.properties[newIndex]
+    //   });
+    // } else {
+    //   this.setState({
+    //     property: data.properties[0]
+    //   });
+    // }
   };
 
   prevProperty = () => {
@@ -45,6 +49,7 @@ class SignIn extends Component {
   };
 
   render() {
+    console.log("properties length", this.state.properties.length);
     // const { auth } = this.props;
     // if (!auth.uid) return <Redirect to="/" />;
     const { properties, property } = this.state;
@@ -56,7 +61,7 @@ class SignIn extends Component {
               className="card-slider-wrapper"
               style={{
                 transform: `translateX(-${property.index *
-                  ((100 / properties.length) * 2)}%)`
+                  (100 / properties.length)}%)`
               }}
             >
               {properties.map(property => (
@@ -77,15 +82,15 @@ class SignIn extends Component {
             <button
               className="btn-forward"
               onClick={() => this.nextProperty()}
-              // disabled={property.index === data.properties.length - 1}
+              disabled={property.index === data.properties.length - 1}
             >
               <ion-icon name="ios-arrow-forward" size="large" />
             </button>
           </div>
         </section>
         <section className="landing-login-box u-center-text">
-          <div className="title landing-login-box-title mb-md">
-            Interested in? Try our app!{" "}
+          <div className="title landing-login-box-title mb-sm">
+            Interested in? Try our App!
           </div>
           <button
             type="button"
@@ -138,10 +143,4 @@ class SignIn extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     auth: state.auth
-//   };
-// };
-// export default connect(mapStateToProps)(SignIn);
 export default SignIn;

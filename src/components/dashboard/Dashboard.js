@@ -11,7 +11,7 @@ class Dashboard extends Component {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/" />;
     return (
-      <div className="container">
+      <div>
         <ExpenseFilters />
 
         <SummaryExpense />

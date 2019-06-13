@@ -12,7 +12,7 @@ class SignedInLinks extends Component {
         <li className="navbar-list-item">
           <NavLink
             to="/dashboard"
-            className="nav-link"
+            className="nav-link link"
             activeClassName="is-active"
           >
             Dashboard
@@ -21,14 +21,14 @@ class SignedInLinks extends Component {
         <li className="navbar-list-item">
           <NavLink
             to="/create"
-            className="nav-link"
+            className="nav-link link"
             activeClassName="is-active"
           >
             AddExpense
           </NavLink>
         </li>
 
-        <li className="navbar-list-item">
+        <li className="navbar-list-item link">
           <NavLink
             to="/"
             onClick={this.handleClick}
