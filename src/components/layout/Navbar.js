@@ -11,6 +11,7 @@ class Navbar extends Component {
       isHidden: true
     };
     this.toggleHandler = this.toggleHandler.bind(this);
+    this.linkHandler = this.linkHandler.bind(this);
   }
 
   toggleHandler() {
@@ -20,9 +21,17 @@ class Navbar extends Component {
       };
     });
   }
+
+  linkHandler() {
+    this.setState({ isHidden: true });
+  }
   render() {
     const { auth } = this.props;
-    const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+    const links = auth.uid ? (
+      <SignedInLinks linkHandler={this.linkHandler} />
+    ) : (
+      <SignedOutLinks />
+    );
     const sidebar = <ul className="navbar-list">{links}</ul>;
     return (
       <nav className="navbar">

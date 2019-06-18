@@ -1,14 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import firebase, { googleAuthProvider } from '../../config/fbConfig';
+import { NavLink } from 'react-router-dom';
 
-const SignedOutLinks = () => {
-  return (
-    <li className="navbar-list-item">
-      <NavLink to="/" className="nav-link link">
-        Sign In
-      </NavLink>
-    </li>
-  );
-};
+class SignedOutLinks extends Component {
+  handleGoogleClick = () => {
+    firebase.auth().signInWithPopup(googleAuthProvider);
+  };
+
+  render() {
+    return (
+      <li className="navbar-list-item">
+        <NavLink
+          to="/"
+          className="nav-link link"
+          onClick={this.handleGoogleClick}
+        >
+          Sign In
+        </NavLink>
+      </li>
+    );
+  }
+}
 
 export default SignedOutLinks;

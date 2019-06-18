@@ -1,4 +1,4 @@
-@import "../base/variable";
+@import '../base/variable';
 
 /*-----------------------------*/
 /*SEARCH BAR*/
@@ -117,57 +117,24 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px 20px 0 0;
-
-  &:nth-child(1) {
-    @include pink-gradient;
-  }
-  &:nth-child(2) {
-    // @include blue-gradient;
-    background: #06beb6; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #48b1bf,
-      #06beb6
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #48b1bf,
-      #06beb6
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  &:nth-child(3) {
-    // @include green-gradient;
-    background: #56ccf2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #2f80ed,
-      #56ccf2
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #2f80ed,
-      #56ccf2
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  &:nth-child(4) {
-    // @include lightgreen-gradient;
-    background: #f46b45; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #eea849,
-      #f46b45
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #eea849,
-      #f46b45
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+
+  &:nth-child(1) {
+    @include pink-gradient;
+  }
+  &:nth-child(2) {
+    @include green-gradient;
+  }
+  &:nth-child(3) {
+    @include blue-gradient;
+  }
+  &:nth-child(4) {
+    @include yellow-gradient;
+  }
 
   &-desc {
     display: flex;

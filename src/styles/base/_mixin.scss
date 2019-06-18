@@ -20,18 +20,45 @@
 }
 
 @mixin blue-gradient {
-  background: -webkit-gradient(to right, #a1c4fd, #c2e9fb);
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  background: #56ccf2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2f80ed,
+    #56ccf2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2f80ed,
+    #56ccf2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @mixin green-gradient {
-  background: -webkit-linear-gradient(to right, #b7f8db, #50a7c2);
-  background: linear-gradient(to right, #b7f8db, #50a7c2);
+  background: #06beb6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #48b1bf,
+    #06beb6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #48b1bf,
+    #06beb6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-@mixin lightgreen-gradient {
-  background: -webkit-linear-gradient(to right, #a1ffce, #faffd1);
-  background: linear-gradient(to right, #a1ffce, #faffd1);
+@mixin yellow-gradient {
+  background: #f46b45; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eea849,
+    #f46b45
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eea849,
+    #f46b45
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 @mixin navbar-gradient {
   background: #9796f0; /* fallback for old browsers */

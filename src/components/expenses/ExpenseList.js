@@ -1,11 +1,8 @@
-import React, { Component } from "react";
-import ExpenseListItem from "./ExpenseListItem";
-import { connect } from "react-redux";
-import Spinner from "../layout/Spinner";
-import filteredExpense from "../filter/filterLogic";
-import { Link } from "react-router-dom";
-import moment from "moment";
-import { messaging } from "firebase";
+import React, { Component } from 'react';
+import ExpenseListItem from './ExpenseListItem';
+import { connect } from 'react-redux';
+import Spinner from '../layout/Spinner';
+import filteredExpense from '../filter/filterLogic';
 
 class ExpenseList extends Component {
   render() {
@@ -38,11 +35,11 @@ class ExpenseList extends Component {
 }
 
 const mapState = state => {
-  console.log("state from expense list", state);
+  console.log('state from expense list', state);
   const id = state.expense.map(expense => {
     return expense.id;
   });
-  console.log("expense id :", id);
+  console.log('expense id :', id);
   return {
     expense: filteredExpense(state.expense, state.filters)
   };

@@ -1,3 +1,7 @@
+/*-----------------------------*/
+/*Carousel */
+/*-----------------------------*/
+
 .card-slider {
   position: relative;
   // max-width: 850px;
@@ -5,7 +9,7 @@
 
   //border for active property
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 300px;
@@ -80,14 +84,6 @@ $i: 0;
     @media only screen and (max-width: $bp-xsmall) {
       padding-right: 2rem;
     }
-    // @media only screen and (max-width: $bp-small) {
-    //   margin-right: 22rem;
-    // }
-    // h1 {
-    //   @media only screen and (max-width: $bp-small) {
-    //     font-size: 15px;
-    //   }
-    // }
   }
 }
 
