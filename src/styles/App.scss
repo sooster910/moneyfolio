@@ -1,12 +1,13 @@
-@import "./base/base";
-@import "./base/variable";
-@import "./base/typogrphy";
-@import "./base/utilities";
-@import "./page/dashboard";
-@import "./components/nav";
-@import "./page/landing";
-@import "./components/table";
-@import "./components/card-slide";
-@import "./components/footer";
+@import './base/base';
+@import './base/variable';
+@import './base/typogrphy';
+@import './base/mixin';
+@import './base/utilities';
+@import './page/dashboard';
+@import './components/nav';
+@import './page/landing';
+@import './components/table';
+@import './components/card-slide';
+@import './components/footer';
 
-@import "./page/addExpense";
+@import './page/addExpense';

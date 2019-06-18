@@ -1,0 +1,87 @@
+@mixin easeOut {
+  transition: all 0.7s ease-out;
+}
+@mixin easeIn {
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+@mixin pink-gradient {
+  background: -webkit-linear-gradient(
+    to right,
+    #ff5f6d,
+    #ffc371
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin blue-gradient {
+  background: -webkit-gradient(to right, #a1c4fd, #c2e9fb);
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+}
+
+@mixin green-gradient {
+  background: -webkit-linear-gradient(to right, #b7f8db, #50a7c2);
+  background: linear-gradient(to right, #b7f8db, #50a7c2);
+}
+
+@mixin lightgreen-gradient {
+  background: -webkit-linear-gradient(to right, #a1ffce, #faffd1);
+  background: linear-gradient(to right, #a1ffce, #faffd1);
+}
+@mixin navbar-gradient {
+  background: #9796f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin box-shadow {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@mixin btn {
+  border: none;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: $secondary-text-color;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin btn-shadow {
+  box-shadow: 0 2px 4px rgb(223, 215, 215);
+}
+@mixin hover-shadow {
+  box-shadow: 0 6px 4px rgb(213, 208, 208);
+}
+
+@mixin scale-effect {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  &:hover,
+  &:active {
+    transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -ms-transform: scale(0.97);
+    -o-transform: scale(0.97);
+  }
+}

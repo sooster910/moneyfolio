@@ -28,15 +28,15 @@
   font-size: 16px;
   font-weight: 400;
   @media only screen and (max-width: $bp-small) {
-    padding: 20px 10px;
-    font-size: 14px;
+    display: none;
   }
 }
 
 .table-body {
   background-color: #fff;
-  /* background-color: #0f273d; */
-  //   background-image: linear-gradient(to right, #361e6c, #1e124f);
+  @media only screen and (max-width: $bp-small) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
 
 .table-body td {
@@ -45,6 +45,9 @@
   -moz-transition: transform 200ms ease-in;
   -ms-transition: transform 200ms ease-in;
   -o-transition: transform 200ms ease-in;
+  @media only screen and (max-width: $bp-small) {
+    display: block;
+  }
 }
 
 .table-body tr td {
@@ -52,20 +55,26 @@
   border-bottom: 1px solid #e3eaef;
   cursor: pointer;
   @media only screen and (max-width: $bp-small) {
-    padding: 15px 5px;
-    font-size: 14px;
+    padding: 5px 0px;
+    border-bottom: 0px;
   }
 }
 
 .edit-btn {
   display: inline-block;
   @include btn;
-  &::before {
-    z-index: -1;
-  }
-  @extend.navbar-list-item;
+  // @include easeIn;
+  @include navbar-gradient;
   @extend.nav-link:link;
-  @media only screen and (max-width: $bp-small) {
-    letter-spacing: 0;
+  @include btn-shadow;
+
+  &:hover,
+  &:active {
+    @include hover-shadow;
+    transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -ms-transform: scale(0.97);
+    -o-transform: scale(0.97);
   }
 }

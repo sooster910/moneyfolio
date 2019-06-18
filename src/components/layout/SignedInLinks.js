@@ -1,8 +1,14 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { LogOut } from "../../store/actions/authActions";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LogOut } from '../../store/actions/authActions';
 class SignedInLinks extends Component {
+  linkHandler = () => {
+    // alert('you clicked link ');
+    // let navbar = document.querySelector('navbar-list-item');
+    // navbar.removeClass('nav-link');
+  };
+
   handleClick = () => {
     this.props.logout();
   };
@@ -14,6 +20,7 @@ class SignedInLinks extends Component {
             to="/dashboard"
             className="nav-link link"
             activeClassName="is-active"
+            onClick={this.linkHandler}
           >
             Dashboard
           </NavLink>
@@ -23,6 +30,7 @@ class SignedInLinks extends Component {
             to="/create"
             className="nav-link link"
             activeClassName="is-active"
+            onClick={this.linkHandler}
           >
             AddExpense
           </NavLink>

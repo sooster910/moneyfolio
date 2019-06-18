@@ -1,68 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap");
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap');
 
 $primary-color: #5c34ae;
 $bg-color: #f2edf3;
 $primary-text-color: #9cb3c9;
 $secondary-text-color: #551a8b;
-$font-poppins: "Poppins", Arial, Tahoma, sans-serif;
-$font-IBM: "IBM Plex Mono", monospace;
-
-@mixin easeOut {
-  transition: all 0.7s ease-out;
-}
-@mixin pink-gradient {
-  background: -webkit-linear-gradient(
-    to right,
-    #ff5f6d,
-    #ffc371
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ff5f6d, #ffc371);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-@mixin blue-gradient {
-  background: -webkit-gradient(to right, #a1c4fd, #c2e9fb);
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-}
-
-@mixin green-gradient {
-  background: -webkit-linear-gradient(to right, #b7f8db, #50a7c2);
-  background: linear-gradient(to right, #b7f8db, #50a7c2);
-}
-
-@mixin lightgreen-gradient {
-  background: -webkit-linear-gradient(to right, #a1ffce, #faffd1);
-  background: linear-gradient(to right, #a1ffce, #faffd1);
-}
-@mixin navbar-gradient {
-  background: #9796f0; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #fbc7d4,
-    #9796f0
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #fbc7d4,
-    #9796f0
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-@mixin box-shadow {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-@mixin btn {
-  border: none;
-  letter-spacing: 2px;
-  border-radius: 20px;
-  padding: 10px 20px;
-  color: $secondary-text-color;
-  &:focus {
-    outline: none;
-  }
-}
+$font-poppins: 'Poppins', Arial, Tahoma, sans-serif;
+$font-IBM: 'IBM Plex Mono', monospace;
 
 /*-----------------------------*/
 /*BREAK POINT */
