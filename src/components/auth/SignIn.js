@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import firebase, { googleAuthProvider } from "../../config/fbConfig";
+import React, { Component } from 'react';
+import firebase, { googleAuthProvider } from '../../config/fbConfig';
 
-import Footer from "../layout/Footer";
-import data from "../../imageSlideData/data";
-import Card from "./Card";
+import Footer from '../layout/Footer';
+import data from '../../imageSlideData/data';
+import Card from './Card';
 
 class SignIn extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class SignIn extends Component {
   };
 
   render() {
-    console.log("properties length", this.state.properties.length);
+    console.log('properties length', this.state.properties.length);
     // const { auth } = this.props;
     // if (!auth.uid) return <Redirect to="/" />;
     const { properties, property } = this.state;
@@ -89,9 +89,14 @@ class SignIn extends Component {
           </div>
         </section>
         <section className="landing-login-box u-center-text">
-          <div className="title landing-login-box-title mb-sm">
+          <div className="title landing-login-box-title mb-xs">
             Interested in? Try our App!
           </div>
+          <div style={{ fontsize: '12px', color: '#fff' }} className="mb-sm">
+            If you want to see with data, try with ID: testmoneyfolio
+            PW:moneyfolio
+          </div>
+
           <button
             type="button"
             onClick={this.handleGuestClick}
@@ -112,7 +117,7 @@ class SignIn extends Component {
         </section>
         <section className="landing-feature-box u-center-text">
           <div className="title landing-feature-box-title mb-md">
-            Featured in{" "}
+            Featured in{' '}
           </div>
           <div className="row">
             <ul className="landing-feature-box-list">

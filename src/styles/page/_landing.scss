@@ -114,42 +114,40 @@
 }
 .landing-feature-box-item {
   padding: 1.25rem;
-  // width: 15rem;
-  // height: 7rem;
 
   &:nth-child(1) {
     .feature_logo {
-      background: url("./pics/forbes.png") center no-repeat;
+      background: url('./pics/forbes.png') center no-repeat;
       background-size: contain;
     }
   }
   &:nth-child(2) {
     .feature_logo {
-      background: url("./pics/techcrunch.png") center no-repeat;
+      background: url('./pics/techcrunch.png') center no-repeat;
       background-size: contain;
     }
   }
   &:nth-child(3) {
     .feature_logo {
-      background: url("./pics/wallstreetjournal.png") center no-repeat;
+      background: url('./pics/wallstreetjournal.png') center no-repeat;
       background-size: contain;
     }
   }
   &:nth-child(4) {
     .feature_logo {
-      background: url("./pics/nbc.png") center no-repeat;
+      background: url('./pics/nbc.png') center no-repeat;
       background-size: contain;
     }
   }
   &:nth-child(5) {
     .feature_logo {
-      background: url("./pics/TheNewYorkTimes.png") center no-repeat;
+      background: url('./pics/TheNewYorkTimes.png') center no-repeat;
       background-size: contain;
     }
   }
   &:nth-child(6) {
     .feature_logo {
-      background: url("./pics/cnn.png") center no-repeat;
+      background: url('./pics/cnn.png') center no-repeat;
       background-size: contain;
     }
   }

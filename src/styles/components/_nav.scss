@@ -45,7 +45,7 @@
     &::before {
       @include navbar-gradient;
       @include z-index(1);
-      content: "";
+      content: '';
       position: absolute;
 
       top: 0;
@@ -104,8 +104,9 @@
   font-weight: 300;
   font-size: 2rem;
   text-decoration: none;
+  color: $secondary-text-color;
   &:before {
-    content: "";
+    content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
@@ -126,7 +127,7 @@
   border: none;
   background: none;
   &:before {
-    content: "";
+    content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%;
