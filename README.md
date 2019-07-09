@@ -1,23 +1,31 @@
 ## Moneyfolio
+
 <ul>
 <li>Moneyfolio is web application that you can track your all spending with interactive dashboard.</li> 
 <li>Visulaization pie chart is displayed in response through what you search by criteria.</li> 
 </ul>
 
+## Demo
+
+[Moneyfolio](https://expense-budget-app.firebaseapp.com/)
+
 ## Built with
+
 <ul>
 <li>React JS</li>
 <li>Redux</li>
 <li>Chart JS</li>
 <li>Firestore</li>
-<li>Bootstrap 4</li>
+<li>Sass</li>
 </ul>
 
 ## Features
+
 <ul>
-<li>add spending</li>
-<li>edit spending</li>
-<li>remove spending</li>
+
+<li>Fully responsive design with flex-box</li>
+<li>All UI features using pure CSS3/SASS </li>
+<li>add,edit,remove spending</li>
 <li>multiple search by text, category and date-range.</li>
 <li>count percentage of spending at each category with pie chart</li>
 <li>overall total spending</li> 
@@ -39,4 +47,4 @@ You will also see any lint errors in the console.
 
 -To sync firestore and dashboard
 connect Dashboard component with single collection
-in fire sotre 
+in fire sotre
