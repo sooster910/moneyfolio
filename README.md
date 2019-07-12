@@ -15,7 +15,7 @@
 <li>React JS</li>
 <li>Redux</li>
 <li>Chart JS</li>
-<li>Firestore</li>
+<li>Firebase</li>
 <li>Sass</li>
 </ul>
 
@@ -27,10 +27,10 @@
 <li>All UI features using pure CSS3/SASS </li>
 <li>add,edit,remove spending</li>
 <li>multiple search by text, category and date-range.</li>
-<li>count percentage of spending at each category with pie chart</li>
-<li>overall total spending</li> 
-<li>montly spending</li>
-<li>google sign-in</li>
+<li>Implemented airbnb react-date calendar picker </li>
+<li>Implemented chart.js to display a count percentage of spending at each category with pie chart</li>
+<li>Implemented google authentication / guest sign-in</li>
+
 </ul>
 
 This project is inspired by Udemy The Complete React Web Developer Course (with Redux)
