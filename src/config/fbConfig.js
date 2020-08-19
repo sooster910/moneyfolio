@@ -1,15 +1,16 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-
+import defaultConfig from './defaultConfig';
 // Replace this with your own config details
 var config = {
-    apiKey: "AIzaSyAySQ_TthJLOPznZt36KnksOjKQeH8cCHk",
-    authDomain: "expense-budget-app.firebaseapp.com",
-    databaseURL: "https://expense-budget-app.firebaseio.com",
-    projectId: "expense-budget-app",
-    storageBucket: "expense-budget-app.appspot.com",
-    messagingSenderId: "992485539146"
+    
+    apiKey:defaultConfig.API_KEY,
+    authDomain: defaultConfig.authDomain,
+    databaseURL: pdefaultConfig.databaseURL,
+    projectId: defaultConfig.projectId,
+    storageBucket: defaultConfig.storageBucket,
+    messagingSenderId: defaultConfig.messagingSenderId
 };
 firebase.initializeApp(config);
 //firebase.firestore().settings({ timestampsInSnapshots: true });
