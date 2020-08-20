@@ -7,7 +7,7 @@ var config = {
     
     apiKey:defaultConfig.API_KEY,
     authDomain: defaultConfig.authDomain,
-    databaseURL: pdefaultConfig.databaseURL,
+    databaseURL: defaultConfig.databaseURL,
     projectId: defaultConfig.projectId,
     storageBucket: defaultConfig.storageBucket,
     messagingSenderId: defaultConfig.messagingSenderId
